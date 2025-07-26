@@ -1,43 +1,25 @@
 {
-  description = "Development shell with latest uv";
+  description = "Python Shell";
 
   inputs = {
-    # Nixpkgs unstable チャネルを利用
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # Rust用overlay（最新Rust toolchainなどを容易に利用）
-    rust-overlay.url = "github:oxalica/rust-overlay";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, rust-overlay, flake-utils, ... }:
+  outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        # overlayを適用
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [ (import rust-overlay) ];
-        };
-
-        # uvのビルド定義
-        uv = pkgs.rustPlatform.buildRustPackage rec {
-          pname = "uv";
-          version = "0.8.3";
-          src = pkgs.fetchFromGitHub {
-            owner = "astral-sh";
-            repo = "uv";
-            rev = "7e78f54e7c17804d412640f940428e6b49329232";
-            sha256 = "0vcpl087x6z4a5lhssq323c3kg45148zf46rzgb1mrdwyqj5gw3g";
-          };
-          cargoSha256 = "";
-        };
+        pkgs = import nixpkgs { inherit system; };
       in {
-        devShells.default = pkgs.mkShell {
-          buildInputs = [ uv ];
+        devShell = pkgs.mkShell {
+          buildInputs = [
+            pkgs.python312
+            pkgs.uv
+          ];
           shellHook = ''
-            echo "Welcome to uv development shell (uv ${uv.version})"
+            echo "uv version: $(uv --version)"
+            echo "python version: $(python --version)"
           '';
         };
-      }
-    );
+      });
 }
-
