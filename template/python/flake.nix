@@ -25,7 +25,7 @@
           src = pkgs.fetchFromGitHub {
             owner = "astral-sh";
             repo = "uv";
-            rev = "v0.8.3";
+            rev = "7e78f54e7c17804d412640f940428e6b49329232";
             sha256 = "";
           };
           cargoSha256 = "";
