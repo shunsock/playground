@@ -26,7 +26,7 @@
             owner = "astral-sh";
             repo = "uv";
             rev = "7e78f54e7c17804d412640f940428e6b49329232";
-            sha256 = "";
+            sha256 = "0vcpl087x6z4a5lhssq323c3kg45148zf46rzgb1mrdwyqj5gw3g";
           };
           cargoSha256 = "";
         };
