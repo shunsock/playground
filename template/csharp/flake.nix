@@ -20,7 +20,7 @@
           shellHook = ''
             echo "dotnet version: $(dotnet --version)"
             echo "task version: $(task --version)"
-            echo "DOTNET_ROOT: ${DOTNET_ROOT:-unset}"
+            echo "DOTNET_ROOT: $DOTNET_ROOT"
           '';
         };
       });
