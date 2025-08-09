@@ -4,7 +4,7 @@ LLM自作入門の学習に利用したコードです。参考にしないよ�
 
 - [LLMs from scratch](https://github.com/rasbt/LLMs-from-scratch)
 
-## Pre-Rquirements
+## Pre-Requirements
 
 - [Nix](https://nixos.org/)
 
