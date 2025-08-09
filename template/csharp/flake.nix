@@ -16,8 +16,8 @@
             pkgs.dotnet-sdk_9
             pkgs.go-task
           ];
+          DOTNET_ROOT = "${pkgs.dotnet-sdk_9}/share/dotnet";
           shellHook = ''
-            [ -z "$DOTNET_ROOT" ] && export DOTNET_ROOT="${dotnet9}"
             echo "dotnet version: $(dotnet --version)"
             echo "task version: $(task --version)"
             echo "DOTNET_ROOT: ${DOTNET_ROOT:-unset}"
