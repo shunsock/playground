@@ -16,7 +16,7 @@ tasks:
   build:prod:
     desc: "Build Native Compiled .NET Application: task build:prod -- (osx-arm64|linux-x64|linux-arm64|win-x64)"
     cmds:
-      - bash ./script/aot_compiledotnet_application.sh {{ .CLI_ARGS }}
+      - bash ./script/aot_compile_dotnet_application.sh {{ .CLI_ARGS }}
     silent: true
 
   test:
