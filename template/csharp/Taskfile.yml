@@ -1,0 +1,8 @@
+version: '3'
+
+tasks:
+  init:
+    desc: "Create .NET Project: task init <project_name>"
+    cmds:
+      - bash ./script/initialize_dotnet_project.sh {{ .CLI_ARGS }}
+    silent: true
