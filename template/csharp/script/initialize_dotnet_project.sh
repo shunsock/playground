@@ -29,7 +29,6 @@ dotnet sln "${PROJECT_NAME}.sln" add "tests/${PROJECT_NAME}.Tests/${PROJECT_NAME
 dotnet add "tests/${PROJECT_NAME}.Tests/${PROJECT_NAME}.Tests.csproj" reference "src/${PROJECT_NAME}/${PROJECT_NAME}.csproj"
 
 # フォーマッターをインストール
-dotnet tool install -g dotnet-format
 
 echo "✅ ${PROJECT_NAME} skeleton created."
 echo "📂 Structure:"
