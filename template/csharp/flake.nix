@@ -15,11 +15,13 @@
           buildInputs = [
             pkgs.dotnet-sdk_9
             pkgs.go-task
+            pkgs.tree
           ];
           DOTNET_ROOT = "${pkgs.dotnet-sdk_9}/share/dotnet";
           shellHook = ''
             echo "dotnet version: $(dotnet --version)"
             echo "task version: $(task --version)"
+            echo "tree version: $(tree --version)"
             echo "DOTNET_ROOT: $DOTNET_ROOT"
           '';
         };
