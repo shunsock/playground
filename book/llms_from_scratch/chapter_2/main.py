@@ -1,5 +1,10 @@
+def check_torch_version() -> None:
+    from importlib.metadata import version
+    print("torch version:", version("torch"))
+    print("tiktoken version:", version("tiktoken"))
+
 def main():
-    print("Hello from chapter-2!")
+    check_torch_version()
 
 
 if __name__ == "__main__":
