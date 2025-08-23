@@ -1,10 +1,9 @@
-def check_torch_version() -> None:
-    from importlib.metadata import version
-    print("torch version:", version("torch"))
-    print("tiktoken version:", version("tiktoken"))
+from helper import (
+    read_text_file,
+)
 
 def main():
-    check_torch_version()
+    print(read_text_file(filepath="the-verdict.txt")[:20])
 
 
 if __name__ == "__main__":
