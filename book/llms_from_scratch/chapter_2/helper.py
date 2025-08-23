@@ -16,3 +16,4 @@ def read_text_file(filepath: str, encoding: str = "utf-8") -> str:
     """
     with open(filepath, mode="r", encoding=encoding) as f:
         return f.read()
+
