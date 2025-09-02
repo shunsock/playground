@@ -33,10 +33,15 @@
           ];
           shellHook = ''
             cd node-pkgs
-            echo "Node.js version: $(node -v)
+            echo "
+            Node.js version: $(node -v)
+            Add:
             npm install -D <package-name>@<version> --package-lock-only
-            # npm uninstall -D <package-name> --package-lock-only
-            npm install --package-lock-only"
+            Remove:
+            npm uninstall -D <package-name> --package-lock-only
+            Convert package.json to package-lock.json:
+            npm install --package-lock-only
+            "
           '';
         };
       }
