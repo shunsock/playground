@@ -1,0 +1,30 @@
+version: '3'
+
+tasks:
+  shell:
+    desc: "devshell for staging"
+    env:
+      GOOGLE_CLOUD_PROJECT_ID: "your_project_id"
+      SHELL_ENVIRONMENT: "staging"
+    cmds:
+      - nix develop --impure
+    silent: true
+
+  init:
+    desc: "terraform init on staging"
+    cmds:
+      - bash script/entry_point/terraform.sh "staging" {{ .CLI_ARGS }} "init"
+    silent: true
+
+  plan:
+    desc: "terraform plan on staging"
+    cmds:
+      - bash script/entry_point/terraform.sh "staging" {{ .CLI_ARGS }} "plan"
+    silent: true
+
+  apply:
+    desc: "terraform apply on staging"
+    cmds:
+      - bash script/entry_point/terraform.sh "staging" {{ .CLI_ARGS }} "apply"
+    silent: true
+

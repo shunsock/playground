@@ -1,0 +1,11 @@
+[formatter.terraform]
+command = "terraform"
+options = ["fmt", "-recursive"]
+includes = ["**/*.tf", "**/*.tfvars"]
+priority = 1
+
+[formatter.nix]
+command = "nix"
+options = ["fmt"]
+includes = ["**/*.nix"]
+priority = 2

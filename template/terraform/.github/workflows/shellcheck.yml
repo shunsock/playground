@@ -1,0 +1,17 @@
+name: shellcheck
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/shellcheck.yml"
+      - "**/*.sh"
+
+jobs:
+  shellcheck:
+    name: shellcheck
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - name: Validationを実行
+        uses: ludeeus/action-shellcheck@master
+
