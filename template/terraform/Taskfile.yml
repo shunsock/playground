@@ -1,0 +1,19 @@
+version: '3'
+
+env:
+  NIXPKGS_ALLOW_UNFREE: 1
+
+includes:
+  stg: tasks/staging.yml
+  prd: tasks/production.yml
+
+tasks:
+  lint:
+    desc: "run lint for shell"
+    cmds:
+      - shellcheck {{.CLI_ARGS}}
+
+  fmt:
+    desc: "run format for terraform, nix"
+    cmds:
+      - treefmt

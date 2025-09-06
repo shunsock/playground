@@ -1,0 +1,19 @@
+name: tflint
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/tflint.yml"
+      - "**/*.tf"
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v5
+    - name: tflintをセットアップ
+      uses: terraform-linters/setup-tflint@v5
+      with:
+        tflint_version: latest
+    - name: Lintを実行
+      run: tflint -f compact
+

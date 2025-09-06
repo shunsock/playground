@@ -1,0 +1,27 @@
+name: terraform_validate
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/terraform_validate.yml"
+      - "**/*.tf"
+
+jobs:
+  validate:
+    name: validate_terraform_source_code
+    runs-on: ubuntu-24.04
+    steps:
+      - name: リポジトリを取得
+        uses: actions/checkout@v5
+
+      - name: Terraformの準備
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.11.0"
+
+      - name: terraform initをバックエンド無しで実行
+        run: terraform init -backend=false
+
+      - name: TerraformソースコードのValidationを実行
+        run: terraform validate
+
