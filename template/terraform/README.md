@@ -1,17 +1,8 @@
-# Shunsock.tf
-
-```
-        .__                                             __
-  ______|  |__   __ __   ____    ______  ____    ____  |  | __
- /  ___/|  |  \ |  |  \ /    \  /  ___/ /  _ \ _/ ___\ |  |/ /
- \___ \ |   Y  \|  |  /|  | |  \ \___ \ (  <_> )\  \___ |    <
-/____  >|___|  /|____/ |___|  //____  > \____/  \___  >|__|_ \
-      \/      \/            \/      \/              \/      \/
-```
+# Terraform Template
 
 ## About
 
-Shunsock.tf is my personal terraform settings.
+Terraform Teamplate
 
 ## Usage
 
