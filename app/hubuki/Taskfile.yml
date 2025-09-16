@@ -1,0 +1,39 @@
+version: "3"
+
+vars:
+  PKGS: ./...
+
+tasks:
+  tidy:
+    cmds:
+      - go mod tidy
+
+  fmt:
+    cmds:
+      - gofmt -w .
+      - goimports -w .
+    sources:
+      - "**/*.go"
+
+  lint:
+    desc: Run golangci-lint (with staticcheck)
+    cmds:
+      - golangci-lint run --fix=false
+
+  lint:fix:
+    desc: Auto-fix possible issues
+    cmds:
+      - golangci-lint run --fix
+
+  test:
+    cmds:
+      - go test -race -coverprofile=coverage.out {{.PKGS}}
+
+  ci:
+    desc: format -> lint -> test
+    deps: [tidy]
+    cmds:
+      - task: fmt
+      - task: lint
+      - task: test
+
