@@ -1,0 +1,5 @@
+mode: atomic
+github.com/shunsock/hubuki/app/main.go:9.13,14.58 4 0
+github.com/shunsock/hubuki/app/main.go:14.58,16.3 1 0
+github.com/shunsock/hubuki/app/main.go:19.58,21.2 1 0
+github.com/shunsock/hubuki/app/main.go:23.60,26.2 2 0

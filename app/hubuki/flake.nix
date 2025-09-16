@@ -14,9 +14,9 @@
           buildInputs = with pkgs; [
             go_1_24
             golangci-lint
-            staticcheck
             gotests
             go-tools
+            goimports
           ];
 
           # よくある環境変数
