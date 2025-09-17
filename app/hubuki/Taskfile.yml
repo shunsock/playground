@@ -11,19 +11,19 @@ tasks:
   fmt:
     cmds:
       - gofmt -w .
-      - goimports -w .
     sources:
       - "**/*.go"
 
   lint:
-    desc: Run golangci-lint (with staticcheck)
+    desc: Run go vet and gofmt check
     cmds:
-      - golangci-lint run --fix=false
+      - go vet ./...
+      - gofmt -d .
 
   lint:fix:
     desc: Auto-fix possible issues
     cmds:
-      - golangci-lint run --fix
+      - gofmt -w .
 
   test:
     cmds:

@@ -16,7 +16,6 @@
             golangci-lint
             gotests
             go-tools
-            goimports
           ];
 
           # よくある環境変数

@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	main "github.com/shunsock/hubuki/app"
+	"github.com/shunsock/hubuki/internal/server"
 )
 
 func TestHomeHandler(t *testing.T) {
@@ -15,7 +15,7 @@ func TestHomeHandler(t *testing.T) {
 	}
 
 	rr := httptest.NewRecorder()
-	handler := http.HandlerFunc(main.HomeHandler)
+	handler := http.HandlerFunc(server.HomeHandler)
 
 	handler.ServeHTTP(rr, req)
 
@@ -38,7 +38,7 @@ func TestHealthHandler(t *testing.T) {
 	}
 
 	rr := httptest.NewRecorder()
-	handler := http.HandlerFunc(main.HealthHandler)
+	handler := http.HandlerFunc(server.HealthHandler)
 
 	handler.ServeHTTP(rr, req)
 
