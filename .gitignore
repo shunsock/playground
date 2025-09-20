@@ -272,5 +272,9 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
+# Go
 .gomodcache/
 .gopath/
+coverage.out
+main
+
