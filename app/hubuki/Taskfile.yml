@@ -1,0 +1,45 @@
+version: "3"
+
+vars:
+  PKGS: ./...
+
+tasks:
+  build:
+    desc: Build app
+    cmds:
+      - go build app/main.go
+
+  tidy:
+    desc: Module clean up
+    cmds:
+      - go mod tidy
+
+  fmt:
+    desc: Format source code
+    cmds:
+      - gofmt -w app
+
+  lint:
+    desc: Run go vet and gofmt check
+    cmds:
+      - go vet ./...
+      - gofmt -d app
+
+  lint:fix:
+    desc: Auto-fix possible issues
+    cmds:
+      - gofmt -w app
+
+  test:
+    desc: Test code
+    cmds:
+      - go test -race -coverprofile=coverage.out {{.PKGS}}
+
+  ci:
+    desc: format -> lint -> test
+    deps: [tidy]
+    cmds:
+      - task: fmt
+      - task: lint
+      - task: test
+
