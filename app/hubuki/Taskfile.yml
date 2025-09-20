@@ -10,20 +10,18 @@ tasks:
 
   fmt:
     cmds:
-      - gofmt -w .
-    sources:
-      - "**/*.go"
+      - gofmt -w app
 
   lint:
     desc: Run go vet and gofmt check
     cmds:
       - go vet ./...
-      - gofmt -d .
+      - gofmt -d app
 
   lint:fix:
     desc: Auto-fix possible issues
     cmds:
-      - gofmt -w .
+      - gofmt -w app
 
   test:
     cmds:
