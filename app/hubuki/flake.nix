@@ -22,6 +22,7 @@
           shellHook = ''
             export GOPATH="$PWD/.gopath"
             export GOMODCACHE="$PWD/.gomodcache"
+            export PATH="$GOPATH/bin:$PATH"
             mkdir -p "$GOPATH" "$GOMODCACHE"
             echo "Go dev shell ready: $(go version)"
           '';
