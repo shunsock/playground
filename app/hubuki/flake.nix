@@ -16,9 +16,9 @@
             golangci-lint
             gotests
             go-tools
+            restish
           ];
 
-          # よくある環境変数
           shellHook = ''
             export GOPATH="$PWD/.gopath"
             export GOMODCACHE="$PWD/.gomodcache"
