@@ -275,6 +275,6 @@ __marimo__/
 # Go
 .gomodcache/
 .gopath/
-coverage.out
+app/hubuki/coverage.out
 main
 
