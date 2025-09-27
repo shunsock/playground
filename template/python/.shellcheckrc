@@ -1,0 +1,3 @@
+# Disable SC1091: Not following sourced files
+# This is safe because we know the sourced files exist and are valid
+disable=SC1091

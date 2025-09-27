@@ -2,7 +2,7 @@
   description = "Python Shell";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-2025";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -14,6 +14,9 @@
         devShell = pkgs.mkShell {
           buildInputs = [
             pkgs.python312
+            pkgs.shellcheck
+            pkgs.go-task
+            pkgs.shfmt
             pkgs.uv
           ];
           shellHook = ''
